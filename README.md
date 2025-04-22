@@ -18,6 +18,7 @@ Ce cours introduit les langages Python et Julia avec leurs écosystèmes respect
 
 ```bash
 git clone https://github.com/CDR-UBS/L3-SNIO-Outils-Informatiques
+
 jupyter notebook
 ```
 
