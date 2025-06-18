@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr-FR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://www.eugenetoons.fr/xmlrpc.php">
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
+<!-- This site is optimized with the Yoast SEO plugin v25.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Utiliser un fichier VDI dans VirtualBox - Blog EugeneToons</title>
+<meta name="description" content="Comment simplement utiliser un fichier VDI dans VirtualBox et tester un Os en évitant de l&#039;installer dans une machine virtuelle." />
+<link rel="canonical" href="https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Utiliser un fichier VDI dans VirtualBox - Blog EugeneToons" />
+<meta property="og:description" content="Comment simplement utiliser un fichier VDI dans VirtualBox et tester un Os en évitant de l&#039;installer dans une machine virtuelle." />
+<meta property="og:url" content="https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/" />
+<meta property="og:site_name" content="Blog EugeneToons" />
+<meta property="article:published_time" content="2017-03-01T17:40:27+00:00" />
+<meta property="article:modified_time" content="2019-12-30T13:33:23+00:00" />
+<meta property="og:image" content="https://www.eugenetoons.fr/wp-content/uploads/2017/02/install-vdi-virtualbox-a-la-une.jpg" />
+<meta property="og:image:width" content="700" />
+<meta property="og:image:height" content="348" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="author" content="Eugene Toons" />
+<meta name="twitter:label1" content="Écrit par" />
+<meta name="twitter:data1" content="Eugene Toons" />
+<meta name="twitter:label2" content="Durée de lecture estimée" />
+<meta name="twitter:data2" content="4 minutes" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#article","isPartOf":{"@id":"https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/"},"author":{"name":"Eugene Toons","@id":"https://www.eugenetoons.fr/#/schema/person/00b2eab4c74975e2087722c82bcaad03"},"headline":"Utiliser un fichier VDI dans VirtualBox","datePublished":"2017-03-01T17:40:27+00:00","dateModified":"2019-12-30T13:33:23+00:00","mainEntityOfPage":{"@id":"https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/"},"wordCount":930,"commentCount":5,"publisher":{"@id":"https://www.eugenetoons.fr/#/schema/person/00b2eab4c74975e2087722c82bcaad03"},"image":{"@id":"https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#primaryimage"},"thumbnailUrl":"https://www.eugenetoons.fr/wp-content/uploads/2017/02/install-vdi-virtualbox-a-la-une.jpg","keywords":["vdi","virtualbox"],"articleSection":["VirtualBox"],"inLanguage":"fr-FR","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#respond"]}]},{"@type":"WebPage","@id":"https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/","url":"https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/","name":"Utiliser un fichier VDI dans VirtualBox - Blog EugeneToons","isPartOf":{"@id":"https://www.eugenetoons.fr/#website"},"primaryImageOfPage":{"@id":"https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#primaryimage"},"image":{"@id":"https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#primaryimage"},"thumbnailUrl":"https://www.eugenetoons.fr/wp-content/uploads/2017/02/install-vdi-virtualbox-a-la-une.jpg","datePublished":"2017-03-01T17:40:27+00:00","dateModified":"2019-12-30T13:33:23+00:00","description":"Comment simplement utiliser un fichier VDI dans VirtualBox et tester un Os en évitant de l'installer dans une machine virtuelle.","breadcrumb":{"@id":"https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#breadcrumb"},"inLanguage":"fr-FR","potentialAction":[{"@type":"ReadAction","target":["https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/"]}]},{"@type":"ImageObject","inLanguage":"fr-FR","@id":"https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#primaryimage","url":"https://www.eugenetoons.fr/wp-content/uploads/2017/02/install-vdi-virtualbox-a-la-une.jpg","contentUrl":"https://www.eugenetoons.fr/wp-content/uploads/2017/02/install-vdi-virtualbox-a-la-une.jpg","width":700,"height":348,"caption":"install vdi virtualbox a la une"},{"@type":"BreadcrumbList","@id":"https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.eugenetoons.fr/"},{"@type":"ListItem","position":2,"name":"Utiliser un fichier VDI dans VirtualBox"}]},{"@type":"WebSite","@id":"https://www.eugenetoons.fr/#website","url":"https://www.eugenetoons.fr/","name":"Blog EugeneToons","description":"Les tutoriels sur la sécurité et Windows en général...","publisher":{"@id":"https://www.eugenetoons.fr/#/schema/person/00b2eab4c74975e2087722c82bcaad03"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.eugenetoons.fr/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"fr-FR"},{"@type":["Person","Organization"],"@id":"https://www.eugenetoons.fr/#/schema/person/00b2eab4c74975e2087722c82bcaad03","name":"Eugene Toons","image":{"@type":"ImageObject","inLanguage":"fr-FR","@id":"https://www.eugenetoons.fr/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/471524247548b8168aa25c4177e99f157b8a38419d5ac5691c8c944c0b15d5b7?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/471524247548b8168aa25c4177e99f157b8a38419d5ac5691c8c944c0b15d5b7?s=96&d=mm&r=g","caption":"Eugene Toons"},"logo":{"@id":"https://www.eugenetoons.fr/#/schema/person/image/"},"sameAs":["https://www.eugenetoons.fr"]}]}</script>
+<!-- / Yoast SEO plugin. -->
+<link rel='dns-prefetch' href='//www.eugenetoons.fr' />
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//v0.wordpress.com' />
+<link rel="alternate" type="application/rss+xml" title="Blog EugeneToons &raquo; Flux" href="https://www.eugenetoons.fr/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Blog EugeneToons &raquo; Flux des commentaires" href="https://www.eugenetoons.fr/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Blog EugeneToons &raquo; Utiliser un fichier VDI dans VirtualBox Flux des commentaires" href="https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/feed/" />
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.eugenetoons.fr\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\ud83d\udd25","\ud83d\udc26\u200b\ud83d\udd25")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<style id='wp-emoji-styles-inline-css'>
+img.wp-smiley, img.emoji {
+display: inline !important;
+border: none !important;
+box-shadow: none !important;
+height: 1em !important;
+width: 1em !important;
+margin: 0 0.07em !important;
+vertical-align: -0.1em !important;
+background: none !important;
+padding: 0 !important;
+}
+</style>
+<!-- <link rel='stylesheet' id='wp-block-library-css' href='https://www.eugenetoons.fr/wp-includes/css/dist/block-library/style.min.css?ver=6.8.1' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//www.eugenetoons.fr/wp-content/cache/wpfc-minified/f2e9kctr/ffkbp.css" media="all"/>
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<!-- <link rel='stylesheet' id='advanced-gutenberg-blocks-style-css' href='https://www.eugenetoons.fr/wp-content/plugins/advanced-gutenberg-blocks/dist/blocks.style.build.css?ver=1.9.8' media='all' /> -->
+<!-- <link rel='stylesheet' id='mediaelement-css' href='https://www.eugenetoons.fr/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17' media='all' /> -->
+<!-- <link rel='stylesheet' id='wp-mediaelement-css' href='https://www.eugenetoons.fr/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.8.1' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//www.eugenetoons.fr/wp-content/cache/wpfc-minified/mk3ddcmo/fdejo.css" media="all"/>
+<style id='jetpack-sharing-buttons-style-inline-css'>
+.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<!-- <link rel='stylesheet' id='contact-form-7-css' href='https://www.eugenetoons.fr/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.0.6' media='all' /> -->
+<!-- <link rel='stylesheet' id='wp-downloadmanager-css' href='https://www.eugenetoons.fr/wp-content/plugins/wp-downloadmanager/download-css.css?ver=1.68.11' media='all' /> -->
+<!-- <link rel='stylesheet' id='hueman-main-style-css' href='https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/css/main.min.css?ver=3.7.27' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//www.eugenetoons.fr/wp-content/cache/wpfc-minified/l9maub8u/ffkbp.css" media="all"/>
+<style id='hueman-main-style-inline-css'>
+body { font-size:1.00rem; }@media only screen and (min-width: 720px) {
+.nav > li { font-size:1.00rem; }
+}::selection { background-color: #3b8dbd; }
+::-moz-selection { background-color: #3b8dbd; }a,a>span.hu-external::after,.themeform label .required,#flexslider-featured .flex-direction-nav .flex-next:hover,#flexslider-featured .flex-direction-nav .flex-prev:hover,.post-hover:hover .post-title a,.post-title a:hover,.sidebar.s1 .post-nav li a:hover i,.content .post-nav li a:hover i,.post-related a:hover,.sidebar.s1 .widget_rss ul li a,#footer .widget_rss ul li a,.sidebar.s1 .widget_calendar a,#footer .widget_calendar a,.sidebar.s1 .alx-tab .tab-item-category a,.sidebar.s1 .alx-posts .post-item-category a,.sidebar.s1 .alx-tab li:hover .tab-item-title a,.sidebar.s1 .alx-tab li:hover .tab-item-comment a,.sidebar.s1 .alx-posts li:hover .post-item-title a,#footer .alx-tab .tab-item-category a,#footer .alx-posts .post-item-category a,#footer .alx-tab li:hover .tab-item-title a,#footer .alx-tab li:hover .tab-item-comment a,#footer .alx-posts li:hover .post-item-title a,.comment-tabs li.active a,.comment-awaiting-moderation,.child-menu a:hover,.child-menu .current_page_item > a,.wp-pagenavi a{ color: #3b8dbd; }input[type="submit"],.themeform button[type="submit"],.sidebar.s1 .sidebar-top,.sidebar.s1 .sidebar-toggle,#flexslider-featured .flex-control-nav li a.flex-active,.post-tags a:hover,.sidebar.s1 .widget_calendar caption,#footer .widget_calendar caption,.author-bio .bio-avatar:after,.commentlist li.bypostauthor > .comment-body:after,.commentlist li.comment-author-admin > .comment-body:after{ background-color: #3b8dbd; }.post-format .format-container { border-color: #3b8dbd; }.sidebar.s1 .alx-tabs-nav li.active a,#footer .alx-tabs-nav li.active a,.comment-tabs li.active a,.wp-pagenavi a:hover,.wp-pagenavi a:active,.wp-pagenavi span.current{ border-bottom-color: #3b8dbd!important; }.sidebar.s2 .post-nav li a:hover i,
+.sidebar.s2 .widget_rss ul li a,
+.sidebar.s2 .widget_calendar a,
+.sidebar.s2 .alx-tab .tab-item-category a,
+.sidebar.s2 .alx-posts .post-item-category a,
+.sidebar.s2 .alx-tab li:hover .tab-item-title a,
+.sidebar.s2 .alx-tab li:hover .tab-item-comment a,
+.sidebar.s2 .alx-posts li:hover .post-item-title a { color: #82b965; }
+.sidebar.s2 .sidebar-top,.sidebar.s2 .sidebar-toggle,.post-comments,.jp-play-bar,.jp-volume-bar-value,.sidebar.s2 .widget_calendar caption{ background-color: #82b965; }.sidebar.s2 .alx-tabs-nav li.active a { border-bottom-color: #82b965; }
+.post-comments::before { border-right-color: #82b965; }
+.search-expand,
+#nav-topbar.nav-container { background-color: #26272b}@media only screen and (min-width: 720px) {
+#nav-topbar .nav ul { background-color: #26272b; }
+}.is-scrolled #header .nav-container.desktop-sticky,
+.is-scrolled #header .search-expand { background-color: #26272b; background-color: rgba(38,39,43,0.90) }.is-scrolled .topbar-transparent #nav-topbar.desktop-sticky .nav ul { background-color: #26272b; background-color: rgba(38,39,43,0.95) }#header { background-color: #33363b; }
+@media only screen and (min-width: 720px) {
+#nav-header .nav ul { background-color: #33363b; }
+}
+#header #nav-mobile { background-color: #33363b; }.is-scrolled #header #nav-mobile { background-color: #33363b; background-color: rgba(51,54,59,0.90) }#nav-header.nav-container, #main-header-search .search-expand { background-color: ; }
+@media only screen and (min-width: 720px) {
+#nav-header .nav ul { background-color: ; }
+}
+</style>
+<!-- <link rel='stylesheet' id='hueman-font-awesome-css' href='https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/css/font-awesome.min.css?ver=3.7.27' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//www.eugenetoons.fr/wp-content/cache/wpfc-minified/k0e6xq4z/ffkbp.css" media="all"/>
+<style id='akismet-widget-style-inline-css'>
+.a-stats {
+--akismet-color-mid-green: #357b49;
+--akismet-color-white: #fff;
+--akismet-color-light-grey: #f6f7f7;
+max-width: 350px;
+width: auto;
+}
+.a-stats * {
+all: unset;
+box-sizing: border-box;
+}
+.a-stats strong {
+font-weight: 600;
+}
+.a-stats a.a-stats__link,
+.a-stats a.a-stats__link:visited,
+.a-stats a.a-stats__link:active {
+background: var(--akismet-color-mid-green);
+border: none;
+box-shadow: none;
+border-radius: 8px;
+color: var(--akismet-color-white);
+cursor: pointer;
+display: block;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+font-weight: 500;
+padding: 12px;
+text-align: center;
+text-decoration: none;
+transition: all 0.2s ease;
+}
+/* Extra specificity to deal with TwentyTwentyOne focus style */
+.widget .a-stats a.a-stats__link:focus {
+background: var(--akismet-color-mid-green);
+color: var(--akismet-color-white);
+text-decoration: none;
+}
+.a-stats a.a-stats__link:hover {
+filter: brightness(110%);
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 0 2px rgba(0, 0, 0, 0.16);
+}
+.a-stats .count {
+color: var(--akismet-color-white);
+display: block;
+font-size: 1.5em;
+line-height: 1.4;
+padding: 0 13px;
+white-space: nowrap;
+}
+</style>
+<!-- <link rel='stylesheet' id='tablepress-default-css' href='https://www.eugenetoons.fr/wp-content/plugins/tablepress/css/build/default.css?ver=3.1.2' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//www.eugenetoons.fr/wp-content/cache/wpfc-minified/jn0luppi/ffkbp.css" media="all"/>
+<script src='//www.eugenetoons.fr/wp-content/cache/wpfc-minified/lnec5cnk/ffkbp.js' type="text/javascript"></script>
+<!-- <script src="https://www.eugenetoons.fr/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script> -->
+<!-- <script src="https://www.eugenetoons.fr/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script> -->
+<!-- <script src="https://www.eugenetoons.fr/wp-content/plugins/google-analyticator/external-tracking.min.js?ver=6.5.7" id="ga-external-tracking-js"></script> -->
+<link rel="https://api.w.org/" href="https://www.eugenetoons.fr/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.eugenetoons.fr/wp-json/wp/v2/posts/2224" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.eugenetoons.fr/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.1" />
+<link rel='shortlink' href='https://wp.me/p4vOgQ-zS' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.eugenetoons.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.eugenetoons.fr%2Futiliser-un-fichier-vdi-dans-virtualbox%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.eugenetoons.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.eugenetoons.fr%2Futiliser-un-fichier-vdi-dans-virtualbox%2F&#038;format=xml" />
+<style>img#wpstats{display:none}</style>
+<link rel="preload" as="font" type="font/woff2" href="https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/webfonts/fa-brands-400.woff2?v=5.15.2" crossorigin="anonymous"/>
+<link rel="preload" as="font" type="font/woff2" href="https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/webfonts/fa-regular-400.woff2?v=5.15.2" crossorigin="anonymous"/>
+<link rel="preload" as="font" type="font/woff2" href="https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/webfonts/fa-solid-900.woff2?v=5.15.2" crossorigin="anonymous"/>
+<link rel="preload" as="font" type="font/woff" href="https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-light-webfont.woff" crossorigin="anonymous"/>
+<link rel="preload" as="font" type="font/woff" href="https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-lightitalic-webfont.woff" crossorigin="anonymous"/>
+<link rel="preload" as="font" type="font/woff" href="https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-regular-webfont.woff" crossorigin="anonymous"/>
+<link rel="preload" as="font" type="font/woff" href="https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-regularitalic-webfont.woff" crossorigin="anonymous"/>
+<link rel="preload" as="font" type="font/woff" href="https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-semibold-webfont.woff" crossorigin="anonymous"/>
+<style>
+/*  base : fonts
+/* ------------------------------------ */
+body { font-family: "Titillium", Arial, sans-serif; }
+@font-face {
+font-family: 'Titillium';
+src: url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-light-webfont.eot');
+src: url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-light-webfont.svg#titillium-light-webfont') format('svg'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-light-webfont.eot?#iefix') format('embedded-opentype'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-light-webfont.woff') format('woff'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-light-webfont.ttf') format('truetype');
+font-weight: 300;
+font-style: normal;
+}
+@font-face {
+font-family: 'Titillium';
+src: url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-lightitalic-webfont.eot');
+src: url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-lightitalic-webfont.svg#titillium-lightitalic-webfont') format('svg'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-lightitalic-webfont.woff') format('woff'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-lightitalic-webfont.ttf') format('truetype');
+font-weight: 300;
+font-style: italic;
+}
+@font-face {
+font-family: 'Titillium';
+src: url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-regular-webfont.eot');
+src: url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-regular-webfont.svg#titillium-regular-webfont') format('svg'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-regular-webfont.eot?#iefix') format('embedded-opentype'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-regular-webfont.woff') format('woff'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-regular-webfont.ttf') format('truetype');
+font-weight: 400;
+font-style: normal;
+}
+@font-face {
+font-family: 'Titillium';
+src: url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-regularitalic-webfont.eot');
+src: url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-regularitalic-webfont.svg#titillium-regular-webfont') format('svg'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-regularitalic-webfont.woff') format('woff'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-regularitalic-webfont.ttf') format('truetype');
+font-weight: 400;
+font-style: italic;
+}
+@font-face {
+font-family: 'Titillium';
+src: url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-semibold-webfont.eot');
+src: url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-semibold-webfont.svg#titillium-semibold-webfont') format('svg'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-semibold-webfont.woff') format('woff'),
+url('https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/fonts/titillium-semibold-webfont.ttf') format('truetype');
+font-weight: 600;
+font-style: normal;
+}
+</style>
+<!--[if lt IE 9]>
+<script src="https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/js/ie/html5shiv-printshiv.min.js"></script>
+<script src="https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/js/ie/selectivizr.js"></script>
+<![endif]-->
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><!-- Google Analytics Tracking by Google Analyticator 6.5.7 -->
+<script type="text/javascript">
+var analyticsFileTypes = [];
+var analyticsSnippet = 'disabled';
+var analyticsEventTracking = 'enabled';
+</script>
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-53601902-1', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+</head>
+<body class="wp-singular post-template-default single single-post postid-2224 single-format-standard wp-embed-responsive wp-theme-hueman col-1c full-width header-desktop-sticky header-mobile-sticky hueman-3-7-27 unknown">
+<div id="wrapper">
+<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
+<header id="header" class="main-menu-mobile-on one-mobile-menu main_menu header-ads-desktop  topbar-transparent no-header-img">
+<nav class="nav-container group mobile-menu mobile-sticky " id="nav-mobile" data-menu-id="header-1">
+<div class="mobile-title-logo-in-header"><p class="site-title">                  <a class="custom-logo-link" href="https://www.eugenetoons.fr/" rel="home" title="Blog EugeneToons | Page d'accueil">Blog EugeneToons</a>                </p></div>
+<!-- <div class="ham__navbar-toggler collapsed" aria-expanded="false">
+<div class="ham__navbar-span-wrapper">
+<span class="ham-toggler-menu__span"></span>
+</div>
+</div> -->
+<button class="ham__navbar-toggler-two collapsed" title="Menu" aria-expanded="false">
+<span class="ham__navbar-span-wrapper">
+<span class="line line-1"></span>
+<span class="line line-2"></span>
+<span class="line line-3"></span>
+</span>
+</button>
+<div class="nav-text"></div>
+<div class="nav-wrap container">
+<ul class="nav container-inner group mobile-search">
+<li>
+<form role="search" method="get" class="search-form" action="https://www.eugenetoons.fr/">
+<label>
+<span class="screen-reader-text">Rechercher :</span>
+<input type="search" class="search-field" placeholder="Rechercher…" value="" name="s" />
+</label>
+<input type="submit" class="search-submit" value="Rechercher" />
+</form>                </li>
+</ul>
+<ul id="menu-menu-principale" class="nav container-inner group"><li id="menu-item-181" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-181"><a href="https://www.eugenetoons.fr/">Accueil</a></li>
+<li id="menu-item-1347" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1347"><a href="https://www.eugenetoons.fr/liste-des-articles/">Liste des articles</a></li>
+<li id="menu-item-3737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3737"><a href="https://www.eugenetoons.fr/sommaire-memento-windows-10/">Mémento Windows 10</a>
+<ul class="sub-menu">
+<li id="menu-item-3741" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3741"><a href="https://www.eugenetoons.fr/reparation-de-windows-10-et-des-applications/">Réparation de Windows 10 et des applications</a></li>
+<li id="menu-item-3742" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3742"><a href="https://www.eugenetoons.fr/tester-le-materiel-sous-windows-10/">Tester le matériel sous Windows 10</a></li>
+<li id="menu-item-3743" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3743"><a href="https://www.eugenetoons.fr/reparation-des-supports-de-stockage/">Réparation des supports de stockage</a></li>
+<li id="menu-item-3744" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3744"><a href="https://www.eugenetoons.fr/mot-de-passe-autres/">Mot de passe &#038; autres</a></li>
+<li id="menu-item-3745" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3745"><a href="https://www.eugenetoons.fr/les-commandes-systeme-sous-windows-10/">Les commandes système sous Windows 10</a></li>
+<li id="menu-item-3746" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3746"><a href="https://www.eugenetoons.fr/la-gestion-des-pilotes-drivers-et-bios-uefi/">La gestion des pilotes, drivers et BIOS UEFI</a></li>
+<li id="menu-item-3747" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3747"><a href="https://www.eugenetoons.fr/installation-de-windows-10-windows-update-et-mise-a-jour/">Installation de Windows 10, Windows Update et mise à jour</a></li>
+<li id="menu-item-3748" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3748"><a href="https://www.eugenetoons.fr/licence-windows-compte-utilisateur-et-compte-microsoft/">Licence Windows, compte utilisateur et compte Microsoft</a></li>
+<li id="menu-item-3749" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3749"><a href="https://www.eugenetoons.fr/divers/">Divers</a></li>
+<li id="menu-item-3750" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3750"><a href="https://www.eugenetoons.fr/les-erreurs-diverses-et-experiences/">Les erreurs diverses et expériences</a></li>
+</ul>
+</li>
+<li id="menu-item-2667" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2667"><a href="https://www.eugenetoons.fr/musique/">Musique</a></li>
+<li id="menu-item-4435" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4435"><a href="#">Guides d&rsquo;achat</a>
+<ul class="sub-menu">
+<li id="menu-item-4466" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4466"><a href="https://www.eugenetoons.fr/choisir-pc-portable/">Comment choisir son Pc Portable</a></li>
+<li id="menu-item-4692" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4692"><a href="https://www.eugenetoons.fr/choisir-sa-carte-sd-et-micro-sd/">Choisir sa carte SD et Micro SD</a></li>
+<li id="menu-item-5333" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5333"><a href="https://www.eugenetoons.fr/choisir-correctement-son-processeur/">Choisir correctement son processeur</a></li>
+<li id="menu-item-5478" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5478"><a href="https://www.eugenetoons.fr/choisir-correctement-une-carte-mere/">Choisir correctement une carte mère</a></li>
+<li id="menu-item-5730" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5730"><a href="https://www.eugenetoons.fr/choisir-correctement-une-carte-graphique/">Choisir correctement une carte graphique</a></li>
+<li id="menu-item-5419" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5419"><a href="https://www.eugenetoons.fr/bien-choisir-des-barrettes-de-ram/">Bien choisir des barrettes de Ram</a></li>
+<li id="menu-item-5207" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5207"><a href="https://www.eugenetoons.fr/comment-bien-choisir-son-ssd/">Comment bien choisir son SSD</a></li>
+<li id="menu-item-5871" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5871"><a href="https://www.eugenetoons.fr/comment-choisir-un-disque-dur/">Comment choisir un disque dur ?</a></li>
+<li id="menu-item-6016" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6016"><a href="https://www.eugenetoons.fr/choisir-un-bon-ventirad-pour-votre-pc/">Choisir un bon ventirad pour votre Pc</a></li>
+<li id="menu-item-4968" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4968"><a href="https://www.eugenetoons.fr/choisir-une-alimentation-de-pc/">Choisir une alimentation de Pc</a></li>
+<li id="menu-item-5532" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5532"><a href="https://www.eugenetoons.fr/choisir-un-boitier-dordinateur/">Choisir un boitier d&rsquo;ordinateur</a></li>
+</ul>
+</li>
+<li id="menu-item-3209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3209"><a href="https://www.eugenetoons.fr/formulaire-de-contact/">Contact</a></li>
+<li id="menu-item-180" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180"><a href="https://www.eugenetoons.fr/liens-2/">Liens</a></li>
+<li id="menu-item-3083" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3083"><a href="https://www.eugenetoons.fr/mentions-legales-cgu/">Mentions Légales &#8211; CGU</a></li>
+</ul>      </div>
+</nav><!--/#nav-topbar-->  
+<div class="container group">
+<div class="container-inner">
+<div class="group hu-pad central-header-zone">
+<div class="logo-tagline-group">
+<p class="site-title">                  <a class="custom-logo-link" href="https://www.eugenetoons.fr/" rel="home" title="Blog EugeneToons | Page d'accueil">Blog EugeneToons</a>                </p>                                                <p class="site-description">Les tutoriels sur la sécurité et Windows en général...</p>
+</div>
+</div>
+<nav class="nav-container group desktop-menu " id="nav-header" data-menu-id="header-2">
+<div class="nav-text"><!-- put your mobile menu text here --></div>
+<div class="nav-wrap container">
+<ul id="menu-menu-principale-1" class="nav container-inner group"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-181"><a href="https://www.eugenetoons.fr/">Accueil</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1347"><a href="https://www.eugenetoons.fr/liste-des-articles/">Liste des articles</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3737"><a href="https://www.eugenetoons.fr/sommaire-memento-windows-10/">Mémento Windows 10</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3741"><a href="https://www.eugenetoons.fr/reparation-de-windows-10-et-des-applications/">Réparation de Windows 10 et des applications</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3742"><a href="https://www.eugenetoons.fr/tester-le-materiel-sous-windows-10/">Tester le matériel sous Windows 10</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3743"><a href="https://www.eugenetoons.fr/reparation-des-supports-de-stockage/">Réparation des supports de stockage</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3744"><a href="https://www.eugenetoons.fr/mot-de-passe-autres/">Mot de passe &#038; autres</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3745"><a href="https://www.eugenetoons.fr/les-commandes-systeme-sous-windows-10/">Les commandes système sous Windows 10</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3746"><a href="https://www.eugenetoons.fr/la-gestion-des-pilotes-drivers-et-bios-uefi/">La gestion des pilotes, drivers et BIOS UEFI</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3747"><a href="https://www.eugenetoons.fr/installation-de-windows-10-windows-update-et-mise-a-jour/">Installation de Windows 10, Windows Update et mise à jour</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3748"><a href="https://www.eugenetoons.fr/licence-windows-compte-utilisateur-et-compte-microsoft/">Licence Windows, compte utilisateur et compte Microsoft</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3749"><a href="https://www.eugenetoons.fr/divers/">Divers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3750"><a href="https://www.eugenetoons.fr/les-erreurs-diverses-et-experiences/">Les erreurs diverses et expériences</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2667"><a href="https://www.eugenetoons.fr/musique/">Musique</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4435"><a href="#">Guides d&rsquo;achat</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4466"><a href="https://www.eugenetoons.fr/choisir-pc-portable/">Comment choisir son Pc Portable</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4692"><a href="https://www.eugenetoons.fr/choisir-sa-carte-sd-et-micro-sd/">Choisir sa carte SD et Micro SD</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5333"><a href="https://www.eugenetoons.fr/choisir-correctement-son-processeur/">Choisir correctement son processeur</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5478"><a href="https://www.eugenetoons.fr/choisir-correctement-une-carte-mere/">Choisir correctement une carte mère</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5730"><a href="https://www.eugenetoons.fr/choisir-correctement-une-carte-graphique/">Choisir correctement une carte graphique</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5419"><a href="https://www.eugenetoons.fr/bien-choisir-des-barrettes-de-ram/">Bien choisir des barrettes de Ram</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5207"><a href="https://www.eugenetoons.fr/comment-bien-choisir-son-ssd/">Comment bien choisir son SSD</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5871"><a href="https://www.eugenetoons.fr/comment-choisir-un-disque-dur/">Comment choisir un disque dur ?</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6016"><a href="https://www.eugenetoons.fr/choisir-un-bon-ventirad-pour-votre-pc/">Choisir un bon ventirad pour votre Pc</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4968"><a href="https://www.eugenetoons.fr/choisir-une-alimentation-de-pc/">Choisir une alimentation de Pc</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5532"><a href="https://www.eugenetoons.fr/choisir-un-boitier-dordinateur/">Choisir un boitier d&rsquo;ordinateur</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3209"><a href="https://www.eugenetoons.fr/formulaire-de-contact/">Contact</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180"><a href="https://www.eugenetoons.fr/liens-2/">Liens</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3083"><a href="https://www.eugenetoons.fr/mentions-legales-cgu/">Mentions Légales &#8211; CGU</a></li>
+</ul>  </div>
+</nav><!--/#nav-header-->      
+</div><!--/.container-inner-->
+</div><!--/.container-->
+</header><!--/#header-->
+<div class="container" id="page">
+<div class="container-inner">
+<div class="main">
+<div class="main-inner group">
+<main class="content" id="content">
+<div class="page-title hu-pad group">
+<ul class="meta-single group">
+<li class="category"><a href="https://www.eugenetoons.fr/category/virtualbox/" rel="category tag">VirtualBox</a></li>
+<li class="comments"><a href="https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#comments"><i class="far fa-comments"></i>5</a></li>
+</ul>
+</div><!--/.page-title-->
+<div class="hu-pad group">
+<article class="post-2224 post type-post status-publish format-standard has-post-thumbnail hentry category-virtualbox tag-vdi tag-virtualbox">
+<div class="post-inner group">
+<h1 class="post-title entry-title">Utiliser un fichier VDI dans VirtualBox</h1>
+<p class="post-byline">
+par     <span class="vcard author">
+<span class="fn"><a href="https://www.eugenetoons.fr/author/enegue_82/" title="Articles par Eugene Toons" rel="author">Eugene Toons</a></span>
+</span>
+&middot;
+<span class="published">1 mars 2017</span>
+</p>
+<div class="clear"></div>
+<div class="entry themeform">
+<div class="entry-inner">
+<p><strong>Comment utiliser un fichier VDI dans VirtualBox et éviter la fastidieuse étape d&rsquo;installation de l&rsquo;Os dans la machine virtuelle.</strong></p>
+<p><span id="more-2224"></span></p>
+<h2>1. Introduction</h2>
+<p>Nous avons vu déjà plusieurs articles sur le formidable outil <strong>VirtualBox</strong> (merci <strong>Oracle</strong>), mais aujourd&rsquo;hui nous allons apprendre à utiliser un fichier <strong>VDI</strong> dans <strong>VirtualBox</strong>. La virtualisation étant un domaine vaste et j&rsquo;espère que ce sujet vous permettra de progresser&#8230;</p>
+<h2>2. Qu&rsquo;est ce qu&rsquo;un fichier VDI</h2>
+<p>Un fichier <strong>VDI</strong> (<strong>VirtualBox Disk Image</strong>) est le format de fichier de disque virtuel utilisé par <strong>VirtualBox</strong>. Donc dès que vous créez une machine virtuelle, l&rsquo;outil crée ce type de fichier. L&rsquo;intérêt d&rsquo;utiliser ce type de fichier déjà créé évite la fastidieuse étape d&rsquo;installation du système d&rsquo;exploitation dans la machine virtuelle. Il existe certains sites ou sont regroupés des images disques (fichier vdi) toutes prêtes à l&#8217;emploi (voir le chapitre <strong>Conclusion</strong> pour quelques liens). Cette technique permet de sauvegarder, d&rsquo;échanger, de déplacer les systèmes déjà installés.</p>
+<p>Petite aparté concernant les fichiers <strong>VMDK</strong> issus de <strong>WMware </strong>de <strong>Microsoft</strong>, il est également possible d&rsquo;utiliser ce genre de fichier dans <strong>VirtualBox</strong> de la même manière que les fichiers <strong>VDI</strong>.</p>
+<h2>3. Utiliser un fichier VDI dans VirtualBox</h2>
+<p>Pour notre exemple j&rsquo;ai choisi de vous faire découvrir un système d&rsquo;exploitation encore en développement qui se nomme <a href="https://www.haiku-os.org/" target="_blank" rel="noopener noreferrer"><strong>Haiku</strong></a>. Ce projet a débuté en 2001 et a pour objet de proposer une version libre du défunt (2001) système <strong>BeOS</strong>. J&rsquo;ai eu l&rsquo;occasion de tester <strong>BeOS</strong> sur mon Pc personnel pendant plusieurs mois et à l&rsquo;époque j&rsquo;avais été agréablement surpris de cet <strong>Os</strong> prometteur. Je dois avouer que très peu d&rsquo;applications étaient disponibles et cela a entrainé hélas sa mort prématurément. Malgré que ce projet est encore en plein développement, les impatients espèrent voir apparaitre prochainement une <strong>Release Candidate</strong>. Je l&rsquo;ai choisi également par souci de simplification, en effet le fichier à télécharger ne pèse qu&rsquo;une centaine de méga octets (format 7zip). Si vous avez déjà regardé la taille des fichiers <strong>VDI</strong> lorsque vous créez une machine virtuelle, il sont particulièrement volumineux. Je vous recommande de faire attention si vous désirez télécharger ce genre de fichier par la suite.</p>
+<p>Pour information j&rsquo;ai créé personnellement ce fichier <strong>VDI</strong> avec la dernière version disponible de <strong>Haiku </strong>(version Alpha4) qui date de 3 ans ! (Hé oui le projet n&rsquo;est pas près d&rsquo;être terminé). Pour réduire le fichier au minimum je l&rsquo;ai compressé au format <strong>7zip</strong>. Pour l&rsquo;utiliser vous devez donc décompresser ce fichier soit à l&rsquo;aide du logiciel <a href="http://www.rarsoft.com/download.htm" target="_blank" rel="noopener noreferrer"><strong>WinRar</strong></a> ou de <a href="http://www.7-zip.org/download.html" target="_blank" rel="noopener noreferrer"><strong>7zip</strong></a>.</p>
+<p>Voici le lien de téléchargement du fichier image <a href="https://www.eugenetoons.fr/fichier/Haiku.7z">Haiku.7z.<br />
+</a><a href="https://www.eugenetoons.fr/fichier/Haiku.7z">https://www.eugenetoons.fr/fichier/Haiku.7z</a></p>
+<p>Si vous ne désirez pas suivre ce tutoriel vous pouvez installer l&rsquo;Os directement dans une machine virtuelle comme je l&rsquo;avais décrit dans « <a href="https://www.eugenetoons.fr/handylinux-une-version-de-linux-reservee-aux-debutants/">HandyLinux une version de Linux réservée aux débutants</a>« .</p>
+<p>C&rsquo;est parti pour le tuto !</p>
+<p>Lancez <strong>VirtualBox</strong> et cliquez sur l&rsquo;icône « <strong>Nouvelle</strong>« .</p>
+<p><a href="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-nouvelle.png"><img  decoding="async" class="size-full wp-image-2229"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-nouvelle.png"  alt="install vdi virtualbox nouvelle" width="316" height="115" data-srcset="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-nouvelle.png 316w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-nouvelle-300x109.png 300w" data-sizes="(max-width: 316px) 100vw, 316px" /></a></p>
+<p>Pour le nom de la machine virtuelle tapez « <strong>Haiku</strong> » ou autre chose. Pour « <strong>Type</strong> » sélectionnez « <strong>Other</strong> » et pour « <strong>Version</strong> » sélectionnez « <strong>Other/Unknown</strong>« . Pour terminer cliquez sur le bouton « <strong>Suivant</strong>« .</p>
+<p><a href="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-nom-systeme.png"><img  fetchpriority="high" decoding="async" class="size-full wp-image-2230"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-nom-systeme.png"  alt="install vdi virtualbox nom systeme" width="400" height="399" data-srcset="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-nom-systeme.png 400w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-nom-systeme-150x150.png 150w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-nom-systeme-300x300.png 300w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-nom-systeme-160x160.png 160w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-nom-systeme-320x320.png 320w" data-sizes="(max-width: 400px) 100vw, 400px" /></a></p>
+<p>Taper « <strong>512 Mo</strong> » pour la taille de la mémoire et validez en cliquant sur le bouton « <strong>Suivant</strong>« .</p>
+<p><a href="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-taille-memoire.png"><img  decoding="async" class="size-full wp-image-2231"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-taille-memoire.png"  alt="install vdi virtualbox taille memoire" width="400" height="399" data-srcset="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-taille-memoire.png 400w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-taille-memoire-150x150.png 150w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-taille-memoire-300x300.png 300w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-taille-memoire-160x160.png 160w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-taille-memoire-320x320.png 320w" data-sizes="(max-width: 400px) 100vw, 400px" /></a></p>
+<p>Cochez « <strong>Utiliser un fichier de disque dur virtuel existant</strong> » et cliquez sur l&rsquo;icône à droite afin de choisir le fichier <strong>VDI</strong>.</p>
+<p><a href="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-select-vdi.png"><img  loading="lazy" decoding="async" class="size-full wp-image-2233"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-select-vdi.png"  alt="install vdi virtualbox select vdi" width="401" height="399" data-srcset="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-select-vdi.png 401w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-select-vdi-150x150.png 150w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-select-vdi-300x300.png 300w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-select-vdi-160x160.png 160w" data-sizes="auto, (max-width: 401px) 100vw, 401px" /></a></p>
+<p>Dans la fenêtre de sélection choisissez votre fichier <strong>VDI</strong> (ici « <strong>Haiku.vdi</strong>« )  et cliquez sur le bouton « <strong>Ouvrir</strong>« .</p>
+<p><a href="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-vdi-ouvrir.png"><img  loading="lazy" decoding="async" class="size-full wp-image-2234"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-vdi-ouvrir.png"  alt="install vdi virtualbox vdi ouvrir" width="714" height="324" data-srcset="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-vdi-ouvrir.png 714w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-vdi-ouvrir-300x136.png 300w" data-sizes="auto, (max-width: 714px) 100vw, 714px" /></a></p>
+<p>Votre fichier est maintenant sélectionné et il suffit de cliquer sur le bouton « <strong>Créer</strong>« .</p>
+<p><a href="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-creer.png"><img  loading="lazy" decoding="async" class="size-full wp-image-2235"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-creer.png"  alt="install vdi virtualbox creer" width="400" height="399" data-srcset="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-creer.png 400w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-creer-150x150.png 150w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-creer-300x300.png 300w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-creer-160x160.png 160w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-creer-320x320.png 320w" data-sizes="auto, (max-width: 400px) 100vw, 400px" /></a></p>
+<p>Nous allons maintenant paramétrer la machine Virtuelle afin que le système puisse tourner correctement. Pour cela faites un clique droit sur la machine Virtuelle « <strong>Haiku</strong> » et sélectionnez l&rsquo;item « <strong>Configuration&#8230;</strong> »</p>
+<p><a href="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config.png"><img  loading="lazy" decoding="async" class="size-full wp-image-2236"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config.png"  alt="install vdi virtualbox config" width="461" height="126" data-srcset="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config.png 461w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config-300x82.png 300w" data-sizes="auto, (max-width: 461px) 100vw, 461px" /></a></p>
+<p>A droite cliquez sur « <strong>Système</strong>« . Sélectionnez l&rsquo;onglet « <strong>Processeur</strong> » et indiquez « <strong>2</strong> » pour le nombre de processeur.</p>
+<div class="mceTemp"></div>
+<p><a href="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config-processeur.png"><img  loading="lazy" decoding="async" class="size-full wp-image-2243"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config-processeur.png"  alt="install vdi virtualbox config processeur" width="683" height="430" data-srcset="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config-processeur.png 683w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config-processeur-300x189.png 300w" data-sizes="auto, (max-width: 683px) 100vw, 683px" /></a></p>
+<p>A droite cliquez sur « <strong>Affichage</strong>« . Dans l&rsquo;onglet « <strong>Écran</strong> » indiquez « <strong>16 Mo</strong> » pour la mémoire vidéo.</p>
+<p><a href="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config-affichage.png"><img  loading="lazy" decoding="async" class="size-full wp-image-2244"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config-affichage.png"  alt="install vdi virtualbox config affichage" width="683" height="430" data-srcset="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config-affichage.png 683w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config-affichage-300x189.png 300w" data-sizes="auto, (max-width: 683px) 100vw, 683px" /></a></p>
+<p>A droite sélectionnez « <strong>Réseau</strong> » et cliquez sur le petit bouton « <strong>Avancé</strong> » pour faire apparaitre les autres options. Pour le type de carte réseau sélectionnez « <strong>Intel Pro/1000 MT Desktop (82540EM)</strong>« . Cochez la case « <strong>Câble branché</strong> » et validez sur le bouton « <strong>OK</strong>« .</p>
+<p><a href="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config-reseau.png"><img  loading="lazy" decoding="async" class="size-full wp-image-2245"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config-reseau.png"  alt="install vdi virtualbox config reseau" width="683" height="430" data-srcset="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config-reseau.png 683w, https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-config-reseau-300x189.png 300w" data-sizes="auto, (max-width: 683px) 100vw, 683px" /></a></p>
+<p>Voilà la configuration est terminée. Vous pouvez maintenant double-cliquez sur la machine pour la lancer.</p>
+<p><a href="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-lancer-haiku.png"><img  loading="lazy" decoding="async" class="size-full wp-image-2246"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2016/12/install-vdi-virtualbox-lancer-haiku.png"  alt="install vdi virtualbox lancer haiku" width="275" height="108" /></a></p>
+<p>Le système <strong>Haiku</strong> nécessite peu de ressource, donc les machines peu puissantes n&rsquo;auront pas de problème pour faire tourner le système.</p>
+<p><a href="https://www.eugenetoons.fr/wp-content/uploads/2017/02/install-vdi-virtualbox-haiku.jpg"><img  loading="lazy" decoding="async" class="size-full wp-image-2388"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2017/02/install-vdi-virtualbox-haiku.jpg"  alt="install vdi virtualbox haiku" width="750" height="563" data-srcset="https://www.eugenetoons.fr/wp-content/uploads/2017/02/install-vdi-virtualbox-haiku.jpg 750w, https://www.eugenetoons.fr/wp-content/uploads/2017/02/install-vdi-virtualbox-haiku-300x225.jpg 300w" data-sizes="auto, (max-width: 750px) 100vw, 750px" /></a></p>
+<p>Petite astuce : Pour fermer le système il suffit de faire un clique droit sur la plume en haut à droite et de choisir l&rsquo;item « <strong>Arrêter&#8230;</strong> » puis « <strong>Éteindre</strong>« .</p>
+<h2>4. Conclusion</h2>
+<p>N&rsquo;hésitez pas à tester d&rsquo;autres OS grâce à cette technique qui vous évite l&rsquo;installation du système. Par contre pour ceux qui désirent utiliser un système d&rsquo;exploitation virtualisé durablement je conseille de réaliser une installation manuelle qui permet un paramétrage plus précis. Pour terminer voici quelques liens qui vous permettront de télécharger d&rsquo;autre fichiers <strong>VDI</strong> :</p>
+<p><a href="https://www.osboxes.org/virtualbox-images/" target="_blank" rel="noopener noreferrer">https://www.osboxes.org/virtualbox-images/</a><br />
+<a href="https://virtualboxes.org/images/" target="_blank" rel="noopener noreferrer">https://virtualboxes.org/images/</a><br />
+<a href="http://www.osboxes.org/virtualbox-images/" target="_blank" rel="noopener noreferrer">http://www.osboxes.org/virtualbox-images/</a></p>
+<p>Je vous souhaite une bonne découverte du système <a href="https://www.haiku-os.org/" target="_blank" rel="noopener noreferrer"><strong>Haiku</strong></a>&#8230;</p>
+<nav class="pagination group">
+</nav><!--/.pagination-->
+</div>
+<div class="clear"></div>
+</div><!--/.entry-->
+</div><!--/.post-inner-->
+</article><!--/.post-->
+<div class="clear"></div>
+<p class="post-tags"><span>Étiquettes : </span> <a href="https://www.eugenetoons.fr/theme/vdi/" rel="tag">vdi</a><a href="https://www.eugenetoons.fr/theme/virtualbox/" rel="tag">virtualbox</a></p>
+<h4 class="heading">
+<i class="far fa-hand-point-right"></i>Vous aimerez aussi...</h4>
+<ul class="related-posts group">
+<li class="related post-hover">
+<article class="post-1503 post type-post status-publish format-standard has-post-thumbnail hentry category-virtualbox tag-live-cd tag-virtualbox">
+<div class="post-thumbnail">
+<a href="https://www.eugenetoons.fr/tester-un-live-cd-dans-virtualbox/" class="hu-rel-post-thumb">
+<img  width="520" height="245"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2016/04/a_la_une_test_livecd_virtualbox-520x245.jpg"  class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="" decoding="async" loading="lazy" />																			</a>
+<a class="post-comments" href="https://www.eugenetoons.fr/tester-un-live-cd-dans-virtualbox/#comments"><i class="far fa-comments"></i>1</a>
+</div><!--/.post-thumbnail-->
+<div class="related-inner">
+<h4 class="post-title entry-title">
+<a href="https://www.eugenetoons.fr/tester-un-live-cd-dans-virtualbox/" rel="bookmark">Tester un Live CD dans VirtualBox</a>
+</h4><!--/.post-title-->
+<div class="post-meta group">
+<p class="post-date">
+<time class="published updated" datetime="2016-04-15 18:38:17">15 avril 2016</time>
+</p>
+</div><!--/.post-meta-->
+</div><!--/.related-inner-->
+</article>
+</li><!--/.related-->
+<li class="related post-hover">
+<article class="post-12950 post type-post status-publish format-standard has-post-thumbnail hentry category-virtualbox tag-installation tag-serveur-ubuntu tag-virtualbox">
+<div class="post-thumbnail">
+<a href="https://www.eugenetoons.fr/installer-un-serveur-ubuntu-sous-virtualbox/" class="hu-rel-post-thumb">
+<img  width="520" height="245"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2024/02/installer-serveur-ubuntu-virtualbox-520x245.jpg"  class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="Installer un serveur Ubuntu sous VirtualBox" decoding="async" loading="lazy" data-srcset="https://www.eugenetoons.fr/wp-content/uploads/2024/02/installer-serveur-ubuntu-virtualbox-520x245.jpg 520w, https://www.eugenetoons.fr/wp-content/uploads/2024/02/installer-serveur-ubuntu-virtualbox-300x141.jpg 300w" data-sizes="auto, (max-width: 520px) 100vw, 520px" />																			</a>
+<a class="post-comments" href="https://www.eugenetoons.fr/installer-un-serveur-ubuntu-sous-virtualbox/#respond"><i class="far fa-comments"></i>0</a>
+</div><!--/.post-thumbnail-->
+<div class="related-inner">
+<h4 class="post-title entry-title">
+<a href="https://www.eugenetoons.fr/installer-un-serveur-ubuntu-sous-virtualbox/" rel="bookmark">Installer un serveur Ubuntu sous VirtualBox</a>
+</h4><!--/.post-title-->
+<div class="post-meta group">
+<p class="post-date">
+<time class="published updated" datetime="2024-02-09 15:35:55">9 février 2024</time>
+</p>
+</div><!--/.post-meta-->
+</div><!--/.related-inner-->
+</article>
+</li><!--/.related-->
+<li class="related post-hover">
+<article class="post-1449 post type-post status-publish format-standard has-post-thumbnail hentry category-virtualbox tag-installation tag-virtualbox tag-windows-10">
+<div class="post-thumbnail">
+<a href="https://www.eugenetoons.fr/installer-virtualbox/" class="hu-rel-post-thumb">
+<img  width="520" height="245"  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://www.eugenetoons.fr/wp-content/uploads/2016/02/a_la_une_installer_virtualbox-520x245.jpg"  class="attachment-thumb-medium size-thumb-medium wp-post-image" alt="a la une installer virtualbox" decoding="async" loading="lazy" data-srcset="https://www.eugenetoons.fr/wp-content/uploads/2016/02/a_la_une_installer_virtualbox-520x245.jpg 520w, https://www.eugenetoons.fr/wp-content/uploads/2016/02/a_la_une_installer_virtualbox-300x141.jpg 300w" data-sizes="auto, (max-width: 520px) 100vw, 520px" />																			</a>
+<a class="post-comments" href="https://www.eugenetoons.fr/installer-virtualbox/#comments"><i class="far fa-comments"></i>4</a>
+</div><!--/.post-thumbnail-->
+<div class="related-inner">
+<h4 class="post-title entry-title">
+<a href="https://www.eugenetoons.fr/installer-virtualbox/" rel="bookmark">Installer VirtualBox version 5</a>
+</h4><!--/.post-title-->
+<div class="post-meta group">
+<p class="post-date">
+<time class="published updated" datetime="2016-02-18 17:51:48">18 février 2016</time>
+</p>
+</div><!--/.post-meta-->
+</div><!--/.related-inner-->
+</article>
+</li><!--/.related-->
+</ul><!--/.post-related-->
+<section id="comments" class="themeform">
+<h3 class="heading">5 réponses</h3>
+<ul class="comment-tabs group">
+<li class="active"><a href="#commentlist-container"><i class="far fa-comments"></i>Commentaires<span>5</span></a></li>
+<li><a href="#pinglist-container"><i class="fas fa-share"></i>Pings<span>0</span></a></li>
+</ul>
+<div id="commentlist-container" class="comment-tab">
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="comment-1889">
+<div id="div-comment-1889" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/e582efa69fa190a4aa48f74404358cd1cddd2f4e984f16fbacef24d57a20eea2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/e582efa69fa190a4aa48f74404358cd1cddd2f4e984f16fbacef24d57a20eea2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' loading='lazy' decoding='async'/>			<cite class="fn">Mia</cite> <span class="says">dit :</span>		</div>
+<div class="comment-meta commentmetadata">
+<a href="https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#comment-1889">2 mars 2017 à 10 h 51 min</a>		</div>
+<p>Bonjour et merci pour ce tuto intéressant.</p>
+<p>J&rsquo;aurais cependant aimé que vous expliquiez pourquoi ces réglages à la création de la machine.<br />
+J&rsquo;ai réglé les miennes sans vraiment être certaine d&rsquo;avoir bien fait.</p>
+<p>Vous ne connaissez pas le matériel sur lequel elle va tourner, et vous recommandez 512 Mo de RAM.<br />
+Pour ma machine Seven, j&rsquo;ai mis 1024 et je n&rsquo;ai que 4 Go de RAM effective sur le PC.</p>
+<p>Vous allouez 2 processeurs. C&rsquo;est quoi ces processeurs ?<br />
+J&rsquo;avais cru comprendre qu&rsquo;il s&rsquo;agissait des cœurs. Puisque mon cpu en possède 4, j&rsquo;en ai attribué 2.<br />
+Mais ça doit être autre chose, sinon pour un pc avec un seul cœur alors que vous réglez la VM sur 2, ça poserait problème, non ?</p>
+<p>A quoi servent les ressources allouées en dessous ? Si j&rsquo;avais attribué les 4 cœurs et réglé les ressources à 50 %, ça reviendrait au même ?</p>
+<p>Pour la mémoire vidéo, j&rsquo;ai mis à 128 Mo sur 256. Mon seul repère a été la différence de couleur (rose/vert) et j&rsquo;ai positionné le curseur à cet endroit un peu au hasard.</p>
+<p>Pour le réseau, j&rsquo;ai laissé la carte par défaut, le câble branché, pareil que vous, mais sans rien y  comprendre&#8230; (j&rsquo;aimerais bien).</p>
+<p>Ça fait beaucoup de questions. Peut-être proposerez-vous plus tard un de vos tutos si bien faits, mais sur les réglages ?<br />
+J&rsquo;ai découvert VirtualBox il y a moins d&rsquo;un an. Je suis complètement épatée par ce logiciel. Mais j&rsquo;ai un peu de mal avec le manuel d&rsquo;aide.</p>
+<p>Bonne journée.</p>
+</div>
+</li><!-- #comment-## -->
+<li class="comment byuser comment-author-enegue_82 bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-1980">
+<div id="div-comment-1980" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/471524247548b8168aa25c4177e99f157b8a38419d5ac5691c8c944c0b15d5b7?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/471524247548b8168aa25c4177e99f157b8a38419d5ac5691c8c944c0b15d5b7?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' loading='lazy' decoding='async'/>			<cite class="fn"><a href="https://www.eugenetoons.fr" class="url" rel="ugc">Eugene Toons</a></cite> <span class="says">dit :</span>		</div>
+<div class="comment-meta commentmetadata">
+<a href="https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#comment-1980">4 mars 2017 à 14 h 45 min</a>		</div>
+<p>Bonjour Mia,</p>
+<p>C&rsquo;est vrai que je n&rsquo;ai pas donné ou peu d&rsquo;explications sur les réglages de la machine virtuelle. En réalité les réglages de la machine virtuelle sont les besoins matériels de l&rsquo;Os pour qu&rsquo;il fonctionne correctement. Le système Haiku, étant encore en développement, il n&rsquo;est pas en encore compatible avec tous les « hardwares » existants. L&rsquo;intérêt d&rsquo;utiliser une machine virtuelle est de pouvoir utiliser et de créer la machine 100% compatible avec l&rsquo;Os. Pour connaitre les besoin de l&rsquo;Os, il suffit de se rendre sur le site de Haiku et de chercher un peu&#8230;<br />
+<a href="https://www.haiku-os.org/get-haiku/installation-guide" target="_blank" rel="nofollow">https://www.haiku-os.org/get-haiku/installation-guide</a><br />
+<a href="https://dev.haiku-os.org/wiki/HardwareInfo" target="_blank" rel="nofollow">https://dev.haiku-os.org/wiki/HardwareInfo</a></p>
+<p>(pour info j&rsquo;utilise le terme VM pour machine virtuelle)</p>
+<p>Dans une VM vous avez toujours le loisir de tester vos paramètres hardwares et cela est beaucoup plus souple que sur une machine réelle.</p>
+<p>Concernant les processeurs vous attribuez le nombre de processeurs en fonction de votre machine réelle (physique). Prenons l&rsquo;exemple de mon ordinateur qui dispose d&rsquo;un Intel i5 (4 cœurs physiques + 4 cœurs logiques/virtuels ). j&rsquo;alloue généralement 2 cœurs pour mes machines virtuelles (100% pour les ressources allouées). En effet mon Windows 10 (système hôte) n&rsquo;a pas besoin des 4 cœurs dont dispose mon Pc pour fonctionner. Dans la fenêtre de configuration « <strong>Système</strong> » -> onglet « <strong>processeurs</strong> » vous distinguez les cœurs physiques (réels) en vert et les cœurs logiques en rouge pale. Le curseur « <strong>Ressources allouées</strong> » permet de gérer plus finement les ressources disponibles de vos machines. Pour ma part et surtout mes besoins minimes en terme de virtualisation je ne l&rsquo;utilise pas (je laisse l&rsquo;option à 100%). N&rsquo;oublions pas que nos ordinateurs sont ceux de Monsieur « tout le monde ». Ce ne sont pas des serveurs (bi Xeon 10 cœurs 20 Threads). De plus je fais tourner (généralement) qu&rsquo;une seule de mes machines virtuelles à la fois. Attention rien ne vous empêche de faire dialoguer 2 VM entre elle.</p>
+<p>En conclusion je dirai que l&rsquo;utilisation d&rsquo;un Os dans une VM est toujours moins rapide que si ce dernier tournait sur une machine réelle. Il faut donc allouer judicieusement vos ressources pour vos différentes VM pour que celles-ci fonctionnent comme si elles tournaient sur une machine réelle. Voici un conseil pour terminer, si vous avez un ordinateur peu puissant je vous conseille d&rsquo;augmenter votre mémoire (ram) qui sera plus judicieux que de changer votre processeur. En plus cela sera moins couteux. Je suis passé de 8 Go à 16 Go sur ma machine et même avec un i5 j&rsquo;ai vu la différence avec VirtualBox et de gros logiciels comme DxO Optics, Lightroom et Nox.</p>
+<p>J&rsquo;espère avoir éclairé votre lanterne&#8230;</p>
+</div>
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-2231">
+<div id="div-comment-2231" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/e582efa69fa190a4aa48f74404358cd1cddd2f4e984f16fbacef24d57a20eea2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/e582efa69fa190a4aa48f74404358cd1cddd2f4e984f16fbacef24d57a20eea2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' loading='lazy' decoding='async'/>			<cite class="fn">Mia</cite> <span class="says">dit :</span>		</div>
+<div class="comment-meta commentmetadata">
+<a href="https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#comment-2231">11 mars 2017 à 9 h 01 min</a>		</div>
+<p>Bonjour et merci pour cette réponse très détaillée qui a parfaitement éclairé ma lanterne :)<br />
+Je viens de créer une VM  Poutoux (une distribution pour débutants et en français).<br />
+Je trouve plus compliqué d&rsquo;installer un système Linux, notamment du fait qu&rsquo;il faut monter les périphériques, ce qui ne se passe pas toujours bien&#8230;<br />
+Pareil pour les additions invités et les dossiers partagés.<br />
+Mais je découvre VirtualBox depuis quelques mois seulement, et vos tutos sont une référence pour comprendre et progresser.</p>
+</div>
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-15365">
+<div id="div-comment-15365" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/9c780de4d78d8449e543afdfe641387ea2ebefe83e136e138526d115c316e68f?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/9c780de4d78d8449e543afdfe641387ea2ebefe83e136e138526d115c316e68f?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' loading='lazy' decoding='async'/>			<cite class="fn">inin</cite> <span class="says">dit :</span>		</div>
+<div class="comment-meta commentmetadata">
+<a href="https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#comment-15365">24 octobre 2020 à 14 h 58 min</a>		</div>
+<p>Merci pour ce tuto :)</p>
+</div>
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-15841">
+<div id="div-comment-15841" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/3e44feb102fb446f9846e424c105e1257cf25384bf107a64ea6b643b9a4423bd?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3e44feb102fb446f9846e424c105e1257cf25384bf107a64ea6b643b9a4423bd?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' loading='lazy' decoding='async'/>			<cite class="fn">Hawa</cite> <span class="says">dit :</span>		</div>
+<div class="comment-meta commentmetadata">
+<a href="https://www.eugenetoons.fr/utiliser-un-fichier-vdi-dans-virtualbox/#comment-15841">13 janvier 2021 à 19 h 13 min</a>		</div>
+<p>Merci pour ton Tuto, c&rsquo;est super bien expliquer</p>
+</div>
+</li><!-- #comment-## -->
+</ol><!--/.commentlist-->
+</div>
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Laisser un commentaire</h3><form action="https://www.eugenetoons.fr/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Votre adresse e-mail ne sera pas publiée.</span> <span class="required-field-message">Les champs obligatoires sont indiqués avec <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Commentaire <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Nom <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required" /></p>
+<p class="comment-form-email"><label for="email">E-mail <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required="required" /></p>
+<p class="comment-form-url"><label for="url">Site web</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url" /></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Prévenez-moi de tous les nouveaux commentaires par e-mail.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Prévenez-moi de tous les nouveaux articles par e-mail.</label></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire" /> <input type='hidden' name='comment_post_ID' value='2224' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="bb956e62e1" /></p><p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="119"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+<p class="akismet_comment_form_privacy_notice">Ce site utilise Akismet pour réduire les indésirables. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">En savoir plus sur la façon dont les données de vos commentaires sont traitées</a>.</p>
+</section><!--/#comments-->          </div><!--/.hu-pad-->
+</main><!--/.content-->
+        </div><!--/.main-inner-->
+</div><!--/.main-->
+</div><!--/.container-inner-->
+</div><!--/.container-->
+<footer id="footer">
+<section class="container" id="footer-bottom">
+<div class="container-inner">
+<a id="back-to-top" href="#"><i class="fas fa-angle-up"></i></a>
+<div class="hu-pad group">
+<div class="grid one-half">
+<div id="copyright">
+<p></p>
+</div><!--/#copyright-->
+<div id="credit" style="">
+<p>Fièrement propulsé par&nbsp;<a class="fab fa-wordpress" title="Propulsé par WordPress " href="https://wordpress.org/" target="_blank" rel="noopener noreferrer"></a> - Conçu par&nbsp;<a href="https://presscustomizr.com/hueman/" title="Thème Hueman">Thème Hueman</a></p>
+</div><!--/#credit-->
+</div>
+<div class="grid one-half last">
+</div>
+</div><!--/.hu-pad-->
+</div><!--/.container-inner-->
+</section><!--/.container-->
+</footer><!--/#footer-->
+</div><!--/#wrapper-->
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/hueman\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div style="display:none">
+<div class="grofile-hash-map-9ee48527ebfa3bef9c6c8b0d9da872ef">
+</div>
+<div class="grofile-hash-map-7b41847cb8caa46b84d4cdaba30b5667">
+</div>
+<div class="grofile-hash-map-6c45027abc66ad3ce96b1175f4fb1eec">
+</div>
+<div class="grofile-hash-map-384c0520b974e94b246254e9e394dff3">
+</div>
+</div>
+<script src="https://www.eugenetoons.fr/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script src="https://www.eugenetoons.fr/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script src="https://www.eugenetoons.fr/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.0.6" id="swv-js"></script>
+<script id="contact-form-7-js-translations">
+( function( domain, translations ) {
+var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+localeData[""].domain = domain;
+wp.i18n.setLocaleData( localeData, domain );
+} )( "contact-form-7", {"translation-revision-date":"2025-02-06 12:02:14+0000","generator":"GlotPress\/4.0.1","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n > 1;","lang":"fr"},"This contact form is placed in the wrong place.":["Ce formulaire de contact est plac\u00e9 dans un mauvais endroit."],"Error:":["Erreur\u00a0:"]}},"comment":{"reference":"includes\/js\/index.js"}} );
+</script>
+<script id="contact-form-7-js-before">
+var wpcf7 = {
+"api": {
+"root": "https:\/\/www.eugenetoons.fr\/wp-json\/",
+"namespace": "contact-form-7\/v1"
+}
+};
+</script>
+<script src="https://www.eugenetoons.fr/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.0.6" id="contact-form-7-js"></script>
+<script src="https://www.eugenetoons.fr/wp-includes/js/underscore.min.js?ver=1.13.7" id="underscore-js"></script>
+<script id="hu-front-scripts-js-extra">
+var HUParams = {"_disabled":[],"SmoothScroll":{"Enabled":true,"Options":{"touchpadSupport":false}},"centerAllImg":"1","timerOnScrollAllBrowsers":"1","extLinksStyle":"","extLinksTargetExt":"","extLinksSkipSelectors":{"classes":["btn","button"],"ids":[]},"imgSmartLoadEnabled":"1","imgSmartLoadOpts":{"parentSelectors":[".container .content",".post-row",".container .sidebar","#footer","#header-widgets"],"opts":{"excludeImg":[".tc-holder-img"],"fadeIn_options":100,"threshold":0}},"goldenRatio":"1.618","gridGoldenRatioLimit":"350","sbStickyUserSettings":{"desktop":true,"mobile":true},"sidebarOneWidth":"340","sidebarTwoWidth":"260","isWPMobile":"","menuStickyUserSettings":{"desktop":"stick_up","mobile":"stick_up"},"mobileSubmenuExpandOnClick":"1","submenuTogglerIcon":"<i class=\"fas fa-angle-down\"><\/i>","isDevMode":"","ajaxUrl":"https:\/\/www.eugenetoons.fr\/?huajax=1","frontNonce":{"id":"HuFrontNonce","handle":"3c0ac1af38"},"isWelcomeNoteOn":"","welcomeContent":"","i18n":{"collapsibleExpand":"Expand","collapsibleCollapse":"Collapse"},"deferFontAwesome":"","fontAwesomeUrl":"https:\/\/www.eugenetoons.fr\/wp-content\/themes\/hueman\/assets\/front\/css\/font-awesome.min.css?3.7.27","mainScriptUrl":"https:\/\/www.eugenetoons.fr\/wp-content\/themes\/hueman\/assets\/front\/js\/scripts.min.js?3.7.27","flexSliderNeeded":"","flexSliderOptions":{"is_rtl":false,"has_touch_support":true,"is_slideshow":false,"slideshow_speed":5000}};
+</script>
+<script src="https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/js/scripts.min.js?ver=3.7.27" id="hu-front-scripts-js" defer></script>
+<script src="https://secure.gravatar.com/js/gprofiles.js?ver=202524" id="grofiles-cards-js"></script>
+<script id="wpgroho-js-extra">
+var WPGroHo = {"my_hash":""};
+</script>
+<script src="https://www.eugenetoons.fr/wp-content/plugins/jetpack/modules/wpgroho.js?ver=14.6" id="wpgroho-js"></script>
+<script id="jetpack-stats-js-before">
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"66686756\",\"post\":\"2224\",\"tz\":\"2\",\"srv\":\"www.eugenetoons.fr\",\"j\":\"1:14.6\"}") ]);
+_stq.push([ "clickTrackerInit", "66686756", "2224" ]);
+</script>
+<script src="https://stats.wp.com/e-202524.js" id="jetpack-stats-js" defer data-wp-strategy="defer"></script>
+<script defer src="https://www.eugenetoons.fr/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1747816493" id="akismet-frontend-js"></script>
+<!--[if lt IE 9]>
+<script src="https://www.eugenetoons.fr/wp-content/themes/hueman/assets/front/js/ie/respond.js"></script>
+<![endif]-->
+</body>
+</html><!-- WP Fastest Cache file was created in 0.581 seconds, on 12 June 2025 @ 18 h 56 min -->
