@@ -1,0 +1,386 @@
+// question: 0  name: Switch category to $course$/top/Défaut pour L3-SNEI - Outils Informatiques 
+$CATEGORY: $course$/top/Défaut pour L3-SNEI - Outils Informatiques 
+
+
+// question: 20002835  name: Question 1
+::Question 1::[html]<p>Compléter le code de la fonction <code>nbcNoAlpha</code> et coller le code complet de cette fonction ici<br></p>{}
+
+
+// question: 86514545  name: Dans le traçage d'une courbe avec plot, quelle commande permet de supprimer ...
+::Dans le traçage d'une courbe avec plot, quelle commande permet de supprimer ...::[html]Dans le traçage d'une courbe avec plot, quelle paramètre permet de supprimer la légende \:{
+	~[moodle]legend\=nolegend
+	=[moodle]legend\=false
+	~[moodle]légende\=faux
+	~<p dir\="ltr" style\="text-align\: left;">legend\=no<br></p>
+}
+
+
+// question: 86514546  name: Dans le traçage des courbes, le paramètre xlabel="Distance" permet de :
+::Dans le traçage des courbes, le paramètre xlabel\="Distance" permet de \:::Dans le traçage des courbes, le paramètre xlabel\="Distance" permet de \:{
+	~changer les informations de l'axe des ordonnées
+	=changer les informations de l'axe des abscisses
+	~changer le titre du graphique
+	~ajouter "Distance" dans le titre
+}
+
+
+// question: 86924988  name: Julia est un langage rapide. Aussi rapide que
+::Julia est un langage rapide. Aussi rapide que::Julia est un langage rapide. Aussi rapide que{
+	~C
+	=Python avec numpy
+	~Python seul
+	=C avec l'option fast-math
+}
+
+
+// question: 87043246  name: Qu'est-ce qu'un dictionnaire en Python ?
+::Qu'est-ce qu'un dictionnaire en Python ?::[html]Qu'est-ce qu'un dictionnaire en Python ?{
+	~Un dictionnaire est une liste de tuples.
+	=Un dictionnaire est une structure de données qui permet de stocker des paires clé-valeur.
+	~Un dictionnaire est une collection ordonnée d'éléments.
+	~Un dictionnaire est une structure de données qui permet de stocker des valeurs uniquement.
+}
+
+
+// question: 87043259  name: Quelle combinaison de touches permet de redémarrer ......
+::Quelle combinaison de touches permet de redémarrer ......::[html]Quelle combinaison de touches permet de redémarrer le kernel et efface tous les résultats du Notebook?{
+	~[moodle]CTRL + M
+	~[moodle]CTRL + SHIFT + F
+	~[moodle]ALT + F
+	=[moodle]CTRL + R
+}
+
+
+// question: 87043245  name: Quelle est la différence entre une liste et un tuple en Python ?
+::Quelle est la différence entre une liste et un tuple en Python ?::[html]Quelle est la différence entre une liste et un tuple en Python ?{
+	~Une liste est une collection ordonnée d'éléments, tandis qu'un tuple est une collection non ordonnée d'éléments.
+	=Une liste est mutable, c'est-à-dire qu'elle peut être modifiée après sa création, tandis qu'un tuple est immuable et ne peut pas être modifié une fois créé.
+	~Une liste est plus rapide à manipuler que tuple.
+	~Une liste peut contenir des éléments de types différents, tandis qu'un tuple ne peut contenir que des éléments du même type.
+}
+
+
+// question: 87043248  name: Quelle est la fonction de la bibliothèque NumPy en Python ?
+::Quelle est la fonction de la bibliothèque NumPy en Python ?::[html]Quelle est la fonction de la bibliothèque NumPy en Python ?{
+	~La bibliothèque NumPy est utilisée pour la génération de nombres aléatoires.
+	~La bibliothèque NumPy est utilisée pour la manipulation des chaînes de caractères.
+	=La bibliothèque NumPy est utilisée pour la manipulation des tableaux multidimensionnels et les opérations mathématiques sur ces tableaux.
+	~La bibliothèque NumPy est utilisée pour la création d'interfaces graphiques.
+}
+
+
+// question: 87043247  name: Quelle est la fonction de la bibliothèque Pandas en Python ?
+::Quelle est la fonction de la bibliothèque Pandas en Python ?::[html]Quelle est la fonction de la bibliothèque Pandas en Python ?{
+	=La bibliothèque Pandas est utilisée pour la manipulation et l'analyse des données.
+	~La bibliothèque Pandas est utilisée pour la génération de nombres aléatoires.
+	~La bibliothèque Pandas est utilisée pour la création d'interfaces graphiques.
+	~La bibliothèque Pandas est utilisée pour la manipulation des chaînes de caractères.
+}
+
+
+// question: 87043252  name: Quelle est la méthode utilisée pour accéder à un élément d'un dictionnaire en Python ?
+::Quelle est la méthode utilisée pour accéder à un élément d'un dictionnaire en Python ?::[html]Quelle est la méthode utilisée pour accéder à un élément d'un dictionnaire en Python ?{
+	~On peut accéder à un élément d'un dictionnaire en utilisant son index.
+	~On ne peut pas accéder à un élément d'un dictionnaire en Python.
+	~On peut accéder à un élément d'un dictionnaire en utilisant la méthode get().
+	=On peut accéder à un élément d'un dictionnaire en utilisant sa clé.
+}
+
+
+// question: 87043249  name: Quelle est la méthode utilisée pour ajouter un élément à une liste en Python ?
+::Quelle est la méthode utilisée pour ajouter un élément à une liste en Python ?::[html]Quelle est la méthode utilisée pour ajouter un élément à une liste en Python ?{
+	=La méthode append() est utilisée pour ajouter un élément à une liste en Python.
+	~La méthode add() est utilisée pour ajouter un élément à une liste en Python.
+	~La méthode extend() est utilisée pour ajouter un élément à une liste en Python.
+	~La méthode insert() est utilisée pour ajouter un élément à une liste en Python.
+}
+
+
+// question: 87043253  name: Quelle est la méthode utilisée pour ajouter une paire clé-valeur à un dictionnaire en Python ?
+::Quelle est la méthode utilisée pour ajouter une paire clé-valeur à un dictionnaire en Python ?::[html]Quelle est la méthode utilisée pour ajouter une paire clé-valeur à un dictionnaire en Python ?{
+	~On peut ajouter une paire clé-valeur à un dictionnaire en utilisant la méthode add(clé, valeur).
+	~On peut ajouter une paire clé-valeur à un dictionnaire en utilisant la méthode insert(clé, valeur).
+	~On ne peut pas ajouter une paire clé-valeur à un dictionnaire en Python.
+	=On peut ajouter une paire clé-valeur à un dictionnaire en utilisant la syntaxe dictionnaire[clé] \= valeur.
+}
+
+
+// question: 87043250  name: Quelle est la méthode utilisée pour supprimer un élément d'une liste en Python ?
+::Quelle est la méthode utilisée pour supprimer un élément d'une liste en Python ?::[html]Quelle est la méthode utilisée pour supprimer un élément d'une liste en Python ?{
+	~La méthode delete() est utilisée pour supprimer un élément d'une liste en Python.
+	~La méthode clear() est utilisée pour supprimer un élément d'une liste en Python.
+	=La méthode remove() est utilisée pour supprimer un élément d'une liste en Python.
+	~La méthode pop() est utilisée pour supprimer un élément d'une liste en Python.
+}
+
+
+// question: 87043254  name: Quelle est la méthode utilisée pour supprimer une paire clé-valeur d'un dictionnaire en Python ?
+::Quelle est la méthode utilisée pour supprimer une paire clé-valeur d'un dictionnaire en Python ?::[html]Quelle est la méthode utilisée pour supprimer une paire clé-valeur d'un dictionnaire en Python ?{
+	=La méthode pop() est utilisée pour supprimer une paire clé-valeur d'un dictionnaire en Python.
+	~La méthode clear() est utilisée pour supprimer une paire clé-valeur d'un dictionnaire en Python.
+	~La méthode delete() est utilisée pour supprimer une paire clé-valeur d'un dictionnaire en Python.
+	~La méthode remove() est utilisée pour supprimer une paire clé-valeur d'un dictionnaire en Python.
+}
+
+
+// question: 87043255  name: Quelle est la méthode utilisée pour trier un dictionnaire en Python ?
+::Quelle est la méthode utilisée pour trier un dictionnaire en Python ?::[html]Quelle est la méthode utilisée pour trier un dictionnaire en Python ?{
+	~La méthode order() est utilisée pour trier un dictionnaire en Python.
+	=On ne peut pas trier un dictionnaire en Python car il est non ordonné.
+	~La méthode sort() est utilisée pour trier un dictionnaire en Python.
+	~La méthode arrange() est utilisée pour trier un dictionnaire en Python.
+}
+
+
+// question: 87043251  name: Quelle est la méthode utilisée pour trier une liste en Python ?
+::Quelle est la méthode utilisée pour trier une liste en Python ?::[html]Quelle est la méthode utilisée pour trier une liste en Python ?{
+	~La méthode organize() est utilisée pour trier une liste en Python.
+	~La méthode arrange() est utilisée pour trier une liste en Python.
+	~La méthode order() est utilisée pour trier une liste en Python.
+	=La méthode sort() est utilisée pour trier une liste en Python.
+}
+
+
+// question: 86514532  name: Si A est un vecteur de taille 10, l'opérateur f.(A) permet d'appliquer la ...
+::Si A est un vecteur de taille 10, l'opérateur f.(A) permet d'appliquer la ...::Si A est un vecteur de taille 10, l'opérateur f.(A) permet d'appliquer la fonction f à _____ éléments de A.{
+	=chacun des
+	~tous les
+}
+
+
+// question: 86514529  name: Dans la fonction ci-dessous, quel code écrire pour que la fonction renvoie le...
+::Dans la fonction ci-dessous, quel code écrire pour que la fonction renvoie le...::Dans la fonction ci-dessous, quel code écrire pour que la fonction renvoie le cube du nombre passé en paramètre \:\nfunction f(x)\nreturn _____\nend{
+	=%100%x^3#
+}
+
+
+// question: 86924989  name: La première fois que je souhaite ajouter le package "Statistics", dans le ...
+::La première fois que je souhaite ajouter le package "Statistics", dans le ...::La première fois que je souhaite ajouter le package "Statistics", dans le gestionnaire qde paquet j'utilise la commande _____.{
+	=%100%add Statistics#
+}
+
+
+// question: 86514539  name: Le code "collect(10:10:100)" génère un tableau de _____ éléments au total.
+::Le code "collect(10\:10\:100)" génère un tableau de _____ éléments au total.::Le code "collect(10\:10\:100)" génère un tableau de _____ éléments au total.{
+	=%100%11#
+}
+
+
+// question: 86514544  name: Le code suivant "using Plots; plot(-π:0.1:π,sin)" permet de tracer la courbe ...
+::Le code suivant "using Plots; plot(-π\:0.1\:π,sin)" permet de tracer la courbe ...::Le code suivant "using Plots; plot(-π\:0.1\:π,sin)" permet de tracer la courbe sinus entre -π et π. Si je souhaite ajouter les points de traçage par dessus la courbe, la commande est _____.{
+	=%100%scatter!(-π\:0.1\:π,sin)#
+}
+
+
+// question: 86514543  name: Le code suivant "using Plots; plot(-π:0.1:π,sin)" permet de tracer la courbe ...
+::Le code suivant "using Plots; plot(-π\:0.1\:π,sin)" permet de tracer la courbe ...::Le code suivant "using Plots; plot(-π\:0.1\:π,sin)" permet de tracer la courbe sinus entre -π et π. Si au lieu de tracer un courbe, je veux des points, la commande est _____.{
+	=%100%scatter(-π\:0.1\:π,sin)#
+}
+
+
+// question: 86514542  name: Le code suivant "using Plots; plot(-π:0.1:π,sin)" permet de tracer la courbe ...
+::Le code suivant "using Plots; plot(-π\:0.1\:π,sin)" permet de tracer la courbe ...::Le code suivant "using Plots; plot(-π\:0.1\:π,sin)" permet de tracer la courbe sinus entre -π et π. Le pas entre les valeurs est _____.{
+	=%100%0.1#
+	=%100%.1#
+}
+
+
+// question: 86924993  name: Pour créer un tableau m avec les valeurs de 5 à 105 par pas de 5, je tape la ...
+::Pour créer un tableau m avec les valeurs de 5 à 105 par pas de 5, je tape la ...::Pour créer un tableau m avec les valeurs de 5 à 105 par pas de 5, je tape la commande m \= _____.{
+	=%100%collect(5\:5\:105#
+}
+
+
+// question: 86514519  name: Pour détruire complètement une cellule, il faut taper :
+::Pour détruire complètement une cellule, il faut taper \:::Pour détruire complètement une cellule, il faut taper \:{
+	=%100%dd#
+	=%100%DD#
+}
+
+
+// question: 86514522  name: Quel est le caractère permettant de signaler un commentaire ?
+::Quel est le caractère permettant de signaler un commentaire ?::[html]Quel est le caractère permettant de signaler un commentaire ?{
+	=%100%\##
+}
+
+
+// question: 86514536  name: Quel est le code pour générer un vecteur de taille 10 de nombres entiers ...
+::Quel est le code pour générer un vecteur de taille 10 de nombres entiers ...::Quel est le code pour générer un vecteur de taille 10 de nombres entiers tirés aléatoirement entre 10 et 100 ?{
+	=%100%rand(10\:100,10)#
+}
+
+
+// question: 86514541  name: Quel est le package nécessaire pour utiliser la fonction "bar" ?
+::Quel est le package nécessaire pour utiliser la fonction "bar" ?::Quel est le package nécessaire pour utiliser la fonction "bar" ?{
+	=%100%Plots#
+}
+
+
+// question: 86514538  name: Quel est le package nécessaire pour utiliser la fonction "mean" ?
+::Quel est le package nécessaire pour utiliser la fonction "mean" ?::Quel est le package nécessaire pour utiliser la fonction "mean" ?{
+	=%100%Statistics#
+}
+
+
+// question: 86514540  name: Quel fonction est utilisée en julia pour créer un dictionnaire ?
+::Quel fonction est utilisée en julia pour créer un dictionnaire ?::Quel fonction est utilisée en julia pour créer un dictionnaire ?{
+	=%100%Dict#
+	=%100%Dict()#
+}
+
+
+// question: 86514530  name: Si A est une matrice 3x4, quelle est la dimension de la matrice A'
+::Si A est une matrice 3x4, quelle est la dimension de la matrice A'::Si A est une matrice 3x4, quelle est la dimension de la matrice A'{
+	=%100%4x3#
+}
+
+
+// question: 86514523  name: Si je souhaite faire un commentaire sur plusieurs lignes, je commence par ...
+::Si je souhaite faire un commentaire sur plusieurs lignes, je commence par ...::[html]Si je souhaite faire un commentaire sur plusieurs lignes, je commence par _____ et je termine par \=\#<br>{
+	=%100%\#\=#
+}
+
+
+// question: 86514520  name: ";" permet de lancer une commande shell.
+::";" permet de lancer une commande shell.::";" permet de lancer une commande shell.{TRUE}
+
+
+// question: 86514521  name: "?" doit être utilisé seul pour obtenir de l'aide.
+::"?" doit être utilisé seul pour obtenir de l'aide.::"?" doit être utilisé seul pour obtenir de l'aide.{FALSE}
+
+
+// question: 86924990  name: A chaque nouvelle session, je dois rajouter les packages dans le gestionnaire...
+::A chaque nouvelle session, je dois rajouter les packages dans le gestionnaire...::A chaque nouvelle session, je dois rajouter les packages dans le gestionnaire avec la commande add, y compris les packages que j'ai ajouté à la session précédente.{FALSE}
+
+
+// question: 86514517  name: CTRL SHIFT - permet de couper une cellule en deux.
+::CTRL SHIFT - permet de couper une cellule en deux.::CTRL SHIFT - permet de couper une cellule en deux.{TRUE}
+
+
+// question: 86514516  name: Dans un notebook, la combinaison ESC B permet de créer une nouvelle cellule ...
+::Dans un notebook, la combinaison ESC B permet de créer une nouvelle cellule ...::Dans un notebook, la combinaison ESC B permet de créer une nouvelle cellule avant la cellule courante.{FALSE}
+
+
+// question: 86514533  name: En julia, "10^19" est un nombre positif ?
+::En julia, "10^19" est un nombre positif ?::En julia, "10^19" est un nombre positif ?{FALSE}
+
+
+// question: 86514525  name: En julia, la concaténation de deux chaines de caractères s'obtient avec un "*".
+::En julia, la concaténation de deux chaines de caractères s'obtient avec un "*".::En julia, la concaténation de deux chaines de caractères s'obtient avec un "*".{TRUE}
+
+
+// question: 86514524  name: En julia, la concaténation de deux chaines de caractères s'obtient avec un "+".
+::En julia, la concaténation de deux chaines de caractères s'obtient avec un "+".::En julia, la concaténation de deux chaines de caractères s'obtient avec un "+".{FALSE}
+
+
+// question: 86514528  name: Le code "rand(1:10,3,3)" génère une matrice aléatoire de nombres entiers de ...
+::Le code "rand(1\:10,3,3)" génère une matrice aléatoire de nombres entiers de ...::Le code "rand(1\:10,3,3)" génère une matrice aléatoire de nombres entiers de taille 3x3.{TRUE}
+
+
+// question: 86514531  name: Le code "rand(1:10,3,3)" génère une matrice aléatoire de taille 3.
+::Le code "rand(1\:10,3,3)" génère une matrice aléatoire de taille 3.::Le code "rand(1\:10,3,3)" génère une matrice aléatoire de taille 3.{FALSE}
+
+
+// question: 86514534  name: Le code "rand(b,u)" génère un nombre aléatoire entre b et u.
+::Le code "rand(b,u)" génère un nombre aléatoire entre b et u.::Le code "rand(b,u)" génère un nombre aléatoire entre b et u.{FALSE}
+
+
+// question: 86514526  name: Les caractères unicodes peuvent être utilisés comme noms de variables.
+::Les caractères unicodes peuvent être utilisés comme noms de variables.::Les caractères unicodes peuvent être utilisés comme noms de variables.{TRUE}
+
+
+// question: 86514537  name: Pour trier une liste l sans la garder triée, on utilise la fonction "sort" ?
+::Pour trier une liste l sans la garder triée, on utilise la fonction "sort" ?::Pour trier une liste l sans la garder triée, on utilise la fonction "sort" ?{TRUE}
+
+
+// question: 86924991  name: Si un package "graphs" est installé, la commande "using graphs" est ...
+::Si un package "graphs" est installé, la commande "using graphs" est ...::Si un package "graphs" est installé, la commande "using graphs" est suffisante pour l'utiliser.{TRUE}
+
+
+// question: 86924992  name: Une fonction naturellement récursive comme celle de Fibonacci est plus ...
+::Une fonction naturellement récursive comme celle de Fibonacci est plus ...::[html]Une fonction naturellement récursive comme celle de Fibonacci est plus efficace si elle est écrite avec un code non- récursif.{TRUE}
+
+
+// question: 0  name: Switch category to $course$/top/Défaut pour L3-SNEI - Outils Informatiques /Julia
+$CATEGORY: $course$/top/Défaut pour L3-SNEI - Outils Informatiques /Julia
+
+
+// question: 43129563  name: Si A est un vecteur de taille 10, l'opérateur f.(A) permet d'appliquer la ...
+::Si A est un vecteur de taille 10, l'opérateur f.(A) permet d'appliquer la ...::Si A est un vecteur de taille 10, l'opérateur f.(A) permet d'appliquer la fonction f à _____ éléments de A.{
+	=chacun des
+	~tous les
+}
+
+
+// question: 43129568  name: Le code "collect(10:10:100)" génère un tableau de _____ éléments au total.
+::Le code "collect(10\:10\:100)" génère un tableau de _____ éléments au total.::[html]Le code "collect(10\:10\:100)" génère un tableau de _____ éléments au total.{
+	=%100%10#
+}
+
+
+// question: 43129556  name: Pour détruire complètement une cellule, il faut taper :
+::Pour détruire complètement une cellule, il faut taper \:::Pour détruire complètement une cellule, il faut taper \:{
+	=%100%dd#
+	=%100%DD#
+}
+
+
+// question: 43129559  name: Quel est le caractère permettant de signaler un commentaire ?
+::Quel est le caractère permettant de signaler un commentaire ?::[html]Quel est le caractère permettant de signaler un commentaire ?{
+	=%100%\##
+}
+
+
+// question: 43129567  name: Quel est le package nécessaire pour utiliser la fonction "mean" ?
+::Quel est le package nécessaire pour utiliser la fonction "mean" ?::Quel est le package nécessaire pour utiliser la fonction "mean" ?{
+	=%100%Statistics#
+}
+
+
+// question: 87144309  name: Quel fonction est utilisée en julia pour créer un dictionnaire ?
+::Quel fonction est utilisée en julia pour créer un dictionnaire ?::[html]Quel fonction est utilisée en julia pour créer un dictionnaire ?{
+	=%100%Dict()#
+	=%50%Dict#
+}
+
+
+// question: 43129557  name: ";" permet de lancer une commande shell.
+::";" permet de lancer une commande shell.::";" permet de lancer une commande shell.{TRUE}
+
+
+// question: 43129558  name: "?" doit être utilisé seul pour obtenir de l'aide.
+::"?" doit être utilisé seul pour obtenir de l'aide.::"?" doit être utilisé seul pour obtenir de l'aide.{FALSE}
+
+
+// question: 43129555  name: CTRL SHIFT - permet de couper une cellule en deux.
+::CTRL SHIFT - permet de couper une cellule en deux.::CTRL SHIFT - permet de couper une cellule en deux.{TRUE}
+
+
+// question: 43129554  name: Dans un notebook, la combinaison ESC B permet de créer une nouvelle cellule ...
+::Dans un notebook, la combinaison ESC B permet de créer une nouvelle cellule ...::Dans un notebook, la combinaison ESC B permet de créer une nouvelle cellule avant la cellule courante.{FALSE}
+
+
+// question: 43129564  name: En julia, "10^19" est un nombre positif ?
+::En julia, "10^19" est un nombre positif ?::En julia, "10^19" est un nombre positif ?{FALSE}
+
+
+// question: 43129560  name: En julia, la concaténation de deux chaines de caractères s'obtient avec un "+".
+::En julia, la concaténation de deux chaines de caractères s'obtient avec un "+".::En julia, la concaténation de deux chaines de caractères s'obtient avec un "+".{FALSE}
+
+
+// question: 43129562  name: Le code "rand(1:10,3,3)" génère une matrice aléatoire de taille 3.
+::Le code "rand(1\:10,3,3)" génère une matrice aléatoire de taille 3.::Le code "rand(1\:10,3,3)" génère une matrice aléatoire de taille 3.{FALSE}
+
+
+// question: 43129565  name: Le code "rand(b,u)" génère un nombre aléatoire entre b et u.
+::Le code "rand(b,u)" génère un nombre aléatoire entre b et u.::Le code "rand(b,u)" génère un nombre aléatoire entre b et u.{FALSE}
+
+
+// question: 43129561  name: Les caractères unicodes peuvent être utilisés comme noms de variables.
+::Les caractères unicodes peuvent être utilisés comme noms de variables.::Les caractères unicodes peuvent être utilisés comme noms de variables.{TRUE}
+
+
+// question: 43129566  name: Pour trier une liste l et la garder triée, on utilise la fonction "sort" ?
+::Pour trier une liste l et la garder triée, on utilise la fonction "sort" ?::Pour trier une liste l et la garder triée, on utilise la fonction "sort" ?{FALSE}
+
+

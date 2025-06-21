@@ -1,0 +1,83 @@
+// question: 0  name: Switch category to $course$/top/Défaut pour L3-SNEI - Outils Informatiques /Julia
+$CATEGORY: $course$/top/Défaut pour L3-SNEI - Outils Informatiques /Julia
+
+
+// question: 43129563  name: Si A est un vecteur de taille 10, l'opérateur f.(A) permet d'appliquer la ...
+::Si A est un vecteur de taille 10, l'opérateur f.(A) permet d'appliquer la ...::Si A est un vecteur de taille 10, l'opérateur f.(A) permet d'appliquer la fonction f à _____ éléments de A.{
+	=chacun des
+	~tous les
+}
+
+
+// question: 43129568  name: Le code "collect(10:10:100)" génère un tableau de _____ éléments au total.
+::Le code "collect(10\:10\:100)" génère un tableau de _____ éléments au total.::[html]Le code "collect(10\:10\:100)" génère un tableau de _____ éléments au total.{
+	=%100%10#
+}
+
+
+// question: 43129556  name: Pour détruire complètement une cellule, il faut taper :
+::Pour détruire complètement une cellule, il faut taper \:::Pour détruire complètement une cellule, il faut taper \:{
+	=%100%dd#
+	=%100%DD#
+}
+
+
+// question: 43129559  name: Quel est le caractère permettant de signaler un commentaire ?
+::Quel est le caractère permettant de signaler un commentaire ?::[html]Quel est le caractère permettant de signaler un commentaire ?{
+	=%100%\##
+}
+
+
+// question: 43129567  name: Quel est le package nécessaire pour utiliser la fonction "mean" ?
+::Quel est le package nécessaire pour utiliser la fonction "mean" ?::Quel est le package nécessaire pour utiliser la fonction "mean" ?{
+	=%100%Statistics#
+}
+
+
+// question: 87144309  name: Quel fonction est utilisée en julia pour créer un dictionnaire ?
+::Quel fonction est utilisée en julia pour créer un dictionnaire ?::[html]Quel fonction est utilisée en julia pour créer un dictionnaire ?{
+	=%100%Dict()#
+	=%50%Dict#
+}
+
+
+// question: 43129557  name: ";" permet de lancer une commande shell.
+::";" permet de lancer une commande shell.::";" permet de lancer une commande shell.{TRUE}
+
+
+// question: 43129558  name: "?" doit être utilisé seul pour obtenir de l'aide.
+::"?" doit être utilisé seul pour obtenir de l'aide.::"?" doit être utilisé seul pour obtenir de l'aide.{FALSE}
+
+
+// question: 43129555  name: CTRL SHIFT - permet de couper une cellule en deux.
+::CTRL SHIFT - permet de couper une cellule en deux.::CTRL SHIFT - permet de couper une cellule en deux.{TRUE}
+
+
+// question: 43129554  name: Dans un notebook, la combinaison ESC B permet de créer une nouvelle cellule ...
+::Dans un notebook, la combinaison ESC B permet de créer une nouvelle cellule ...::Dans un notebook, la combinaison ESC B permet de créer une nouvelle cellule avant la cellule courante.{FALSE}
+
+
+// question: 43129564  name: En julia, "10^19" est un nombre positif ?
+::En julia, "10^19" est un nombre positif ?::En julia, "10^19" est un nombre positif ?{FALSE}
+
+
+// question: 43129560  name: En julia, la concaténation de deux chaines de caractères s'obtient avec un "+".
+::En julia, la concaténation de deux chaines de caractères s'obtient avec un "+".::En julia, la concaténation de deux chaines de caractères s'obtient avec un "+".{FALSE}
+
+
+// question: 43129562  name: Le code "rand(1:10,3,3)" génère une matrice aléatoire de taille 3.
+::Le code "rand(1\:10,3,3)" génère une matrice aléatoire de taille 3.::Le code "rand(1\:10,3,3)" génère une matrice aléatoire de taille 3.{FALSE}
+
+
+// question: 43129565  name: Le code "rand(b,u)" génère un nombre aléatoire entre b et u.
+::Le code "rand(b,u)" génère un nombre aléatoire entre b et u.::Le code "rand(b,u)" génère un nombre aléatoire entre b et u.{FALSE}
+
+
+// question: 43129561  name: Les caractères unicodes peuvent être utilisés comme noms de variables.
+::Les caractères unicodes peuvent être utilisés comme noms de variables.::Les caractères unicodes peuvent être utilisés comme noms de variables.{TRUE}
+
+
+// question: 43129566  name: Pour trier une liste l et la garder triée, on utilise la fonction "sort" ?
+::Pour trier une liste l et la garder triée, on utilise la fonction "sort" ?::Pour trier une liste l et la garder triée, on utilise la fonction "sort" ?{FALSE}
+
+
