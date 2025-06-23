@@ -30,5 +30,3 @@ jupyter notebook
 ## Licence
 
 Ce matériel pédagogique est destiné à un usage académique à l'Université Bretagne Sud.
-
-# L3-SNIO-Outils-Informatiques
